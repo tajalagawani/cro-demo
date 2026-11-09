@@ -6,8 +6,11 @@
   --ink: #1a1d24;
   --mist: #666d7a;
   --line: #dfe2db;
+  --line-soft: #ebede8;
   --pine: #1f5c4d;
+  --pine-soft: #e4eeea;
   --amber: #b4731c;
+  --amber-soft: #fbf3e6;
 }
 
 @theme inline {
@@ -16,9 +19,13 @@
   --color-ink: var(--ink);
   --color-mist: var(--mist);
   --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
   --color-pine: var(--pine);
+  --color-pine-soft: var(--pine-soft);
   --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
   --font-sans: var(--font-instrument-sans), system-ui, sans-serif;
+  --shadow-card: 0 1px 2px rgb(26 29 36 / 0.04), 0 8px 24px -12px rgb(26 29 36 / 0.12);
 }
 
 body {
@@ -26,4 +33,19 @@ body {
   color: var(--ink);
   font-family: var(--font-sans);
   font-variant-numeric: tabular-nums;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--pine-soft);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
